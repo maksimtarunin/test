@@ -9,9 +9,6 @@ COPY ./config/nginx.conf /etc/nginx/
 
 RUN pip install --upgrade -r /app/requirements.txt
 
-#CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8080"]
-#CMD ["nginx", "-t"]
-
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN set -eux; \
         chmod 0700 /docker-entrypoint.sh
