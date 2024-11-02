@@ -12,8 +12,4 @@ RUN mkdir -p /logs
 
 RUN pip install --upgrade -r /app/requirements.txt
 
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
-RUN set -eux; \
-        chmod 0700 /docker-entrypoint.sh
-
 CMD ["/usr/bin/supervisord"]
